@@ -1,0 +1,86 @@
+package com.sistemaHotel.modelos;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+
+@Entity
+@Table(name = "empleados")
+public class Empleado {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @NotBlank(message = "Nombre es requerdio")
+    private String nombre;
+
+    @NotBlank(message = "Apellido es requerido")
+    private String apellido;
+
+    @NotBlank(message = "Direccion es requerido")
+    private String direccion;
+
+    @NotBlank(message = "Dui es requerido")
+    private String dui;
+
+    @NotBlank(message = "Telefono es requerido")
+    private String telefono;
+
+    @NotBlank(message = "Estado es requerido")
+    private String estado;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public @NotBlank(message = "Nombre es requerdio") String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(@NotBlank(message = "Nombre es requerdio") String nombre) {
+        this.nombre = nombre;
+    }
+
+    public @NotBlank(message = "Apellido es requerido") String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(@NotBlank(message = "Apellido es requerido") String apellido) {
+        this.apellido = apellido;
+    }
+
+    public @NotBlank(message = "Direccion es requerido") String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(@NotBlank(message = "Direccion es requerido") String direccion) {
+        this.direccion = direccion;
+    }
+
+    public @NotBlank(message = "Dui es requerido") String getDui() {
+        return dui;
+    }
+
+    public void setDui(@NotBlank(message = "Dui es requerido") String dui) {
+        this.dui = dui;
+    }
+
+    public @NotBlank(message = "Telefono es requerido") String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(@NotBlank(message = "Telefono es requerido") String telefono) {
+        this.telefono = telefono;
+    }
+
+    public @NotBlank(message = "Estado es requerido") String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(@NotBlank(message = "Estado es requerido") String estado) {
+        this.estado = estado;
+    }
+}
