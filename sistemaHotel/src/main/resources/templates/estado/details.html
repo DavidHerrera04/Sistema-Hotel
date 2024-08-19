@@ -1,0 +1,20 @@
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div layout:fragment="content">
+  <h1>Detalles del estado</h1>
+  <div>
+    <hr />
+    <dl class="row">
+      <dt class="col-sm-2">ID</dt>
+      <dd class="col-sm-10" th:text="${estado.id}"></dd>
+
+      <dt class="col-sm-2">Nombre</dt>
+      <dd class="col-sm-10" th:text="${estado.nombre}"></dd>
+    </dl>
+
+    <a th:href="@{/estados/edit/{id} (id = ${estado.id}) }" class="btn btn-primary">Editar</a>
+    <a th:href="@{/estados}" type="submit" class="btn btn-secondary">Regresar</a>
+  </div>
+</div>
