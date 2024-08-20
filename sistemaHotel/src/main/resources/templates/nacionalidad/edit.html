@@ -1,0 +1,26 @@
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div layout:fragment="content">
+    <h1>Editar nacionalidad</h1>
+    <form th:action="@{/nacionalidades/save}" th:object="${nacionalidad}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="pais">Pais</label>
+                    <input type="text" class="form-control" th:field="*{pais}" id="pais" placeholder="Escriba el nombre del pais" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nacionalidad</label>
+                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" placeholder="Escriba el nombre de la nacionalidad" required>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-primary">Modificar</button>
+        <a th:href="@{/nacionalidades}" type="submit" class="btn btn-secondary">Regresar</a>
+
+    </form>
+</div>

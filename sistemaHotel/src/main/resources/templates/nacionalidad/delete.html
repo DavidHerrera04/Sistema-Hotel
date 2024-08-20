@@ -1,0 +1,28 @@
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div layout:fragment="content">
+    <h1>Eliminar nacionalidad</h1>
+    <br>
+    <h3>¿Esta seguro que desea eliminar este registro?</h3>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">ID</dt>
+            <dd class="col-sm-10" th:text="${nacionalidad.id}"></dd>
+
+            <dt class="col-sm-2">Pais</dt>
+            <dd class="col-sm-10" th:text="${nacionalidad.pais}"></dd>
+
+            <dt class="col-sm-2">Nacionalidad</dt>
+            <dd class="col-sm-10" th:text="${nacionalidad.nombre}"></dd>
+        </dl>
+        <form th:action="@{/nacionalidades/delete}" method="post">
+            <input type="hidden" name="Id" th:value="${nacionalidad.id}">
+            <input type="submit" value="Eliminar" class="btn btn-danger"> |
+            <a th:href="@{/nacionalidades}" type="submit" class="btn btn-secondary">Regresar</a>
+        </form>
+    </div>
+
+</div>
