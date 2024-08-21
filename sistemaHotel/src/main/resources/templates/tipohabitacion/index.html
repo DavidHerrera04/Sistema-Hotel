@@ -1,0 +1,60 @@
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div layout:fragment="content">
+    <!-- Mostrar mensaje de confirmacion en casa de exito -->
+    <div th:if="${msg != null }">
+        <script>
+            Swal.fire({
+                title: "Confirmacion",
+                text: '[[${msg}]]',
+                icon: "success"
+            });
+        </script>
+    </div>
+
+    <!-- Mostrar mensaje de confirmacion en casa de error -->
+    <div th:if="${error != null }">
+        <script>
+            Swal.fire({
+                title: "Error",
+                text: '[[${error}]]',
+                icon: "error"
+            });
+        </script>
+    </div>
+
+    <h1>Listado de Tipos de Habitacion</h1>
+    <a th:href="@{/tiposhabitacion/create}" class="btn btn-outline-primary">Nueva habitacion</a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item: ${tiposhabitacion}">
+            <td th:text="${item.id}"></td>
+            <td th:text="${item.nombre}"></td>
+            <td th:text="${item.descripcion}"></td>
+
+            <td>
+                <a th:href="@{/tiposhabitacion/details/{id} (id=${item.id}) }" class="btn btn-outline-secondary">Detalles</a>
+                <a th:href="@{/tiposhabitacion/edit/{id} (id=${item.id}) }" class="btn btn-outline-info">Editar</a>
+                <a th:href="@{/tiposhabitacion/remove/{id} (id=${item.id}) }" class="btn btn-outline-danger">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item" th:each="pagenumber : ${pageNumbers}">
+                <a class="page-link" th:href="@{/tiposhabitacion?(page=${pagenumber}) }" th:text="${pagenumber}"></a>
+            </li>
+        </ul>
+    </nav>
+</div>

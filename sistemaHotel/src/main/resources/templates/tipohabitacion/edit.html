@@ -1,0 +1,30 @@
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div layout:fragment="content">
+    <h1>Editar tipo de habitacion</h1>
+    <form th:action="@{/tiposhabitacion/save}" th:object="${tipohabitacion}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" placeholder="Escriba el nombre del tipo de habitacion" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="descripcion">Descripcion</label>
+                    <input type="text" class="form-control" th:field="*{descripcion}" id="descripcion" placeholder="Escriba la descripcion del tipo de habitacion" required>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-primary">Modificar</button>
+        <a th:href="@{/tiposhabitacion}" type="submit" class="btn btn-secondary">Regresar</a>
+
+    </form>
+</div>
