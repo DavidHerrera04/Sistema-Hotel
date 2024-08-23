@@ -1,0 +1,68 @@
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div layout:fragment="content">
+    <h1> Crear nuevo Cliente</h1>
+    <form th:action="@{/clientes/save}" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nacionalidad">Nacionalidad</label>
+                    <select id="nacionalidad" name="nacionalidadId" class="form-control" required>
+                        <option th:each="nacionalidad : ${nacionalidades}" th:value="${nacionalidad.id}" th:text="${nacionalidad.nombre}"></option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba el nombre del cliente" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Escriba el apellido del cliente" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="direccion">Direccion</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Escriba la direccion del cliente" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="documento">Documento</label>
+                    <input type="text" class="form-control" id="documento" name="documento" placeholder="Escriba el documento del cliente" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="telefono">Telefono</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Escriba el telefono del cliente" required>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <a href="/clientes">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
