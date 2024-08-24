@@ -1,0 +1,33 @@
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div layout:fragment="content">
+    <h1>Detalles de la habitación</h1>
+    <div>
+        <hr>
+        <dl class="row">
+            <dt class="col-sm-2">ID</dt>
+            <dd class="col-sm-10" th:text="${habitacion.id}"></dd>
+
+            <dt class="col-sm-2">Número</dt>
+            <dd class="col-sm-10" th:text="${habitacion.numero}"></dd>
+
+            <dt class="col-sm-2">Estado</dt>
+            <dd class="col-sm-10" th:text="${habitacion.estado}"></dd>
+
+            <dt class="col-sm-2">Costo</dt>
+            <dd class="col-sm-10" th:text="${habitacion.costo}"></dd>
+
+            <dt class="col-sm-2">Tipo habitación</dt>
+            <dd class="col-sm-10" th:text="${habitacion.tipoHabitacion.nombre}"></dd>
+
+            <dt class="col-sm-2">Descripción</dt>
+            <dd class="col-sm-10" th:text="${habitacion.descripcion}"></dd>
+
+        </dl>
+
+        <a th:href="@{/habitaciones/edit/{id} (id = ${habitacion.id}) }" class="btn btn-primary">Editar</a>
+        <a th:href="@{/habitaciones}" type="submit" class="btn btn-secondary">Regresar</a>
+    </div>
+</div>

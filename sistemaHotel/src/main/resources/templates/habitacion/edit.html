@@ -1,0 +1,66 @@
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div layout:fragment="content">
+    <h1>Editar habitación</h1>
+    <form th:action="@{/habitaciones/update}" method="post">
+        <input type="hidden" name="id" th:value="${habitacion.id}">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="numero">Número</label>
+                    <input type="text" class="form-control"  id="numero" name="numero" th:value="${habitacion.numero}"  required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <input type="text" class="form-control"  id="estado" name="estado" th:value="${habitacion.estado}"  required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="costo">Costo</label>
+                    <input type="text" class="form-control"  id="costo" name="costo" th:value="${habitacion.costo}"  required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="tipoHabitacion">Tipo Habitación</label>
+                    <select  id="tipoHabitacion" name="tipoHabitacionId" class="form-control" required>
+                        <option th:each="tipoHabitacion: ${tiposHabitacion}"
+                                th:value="${tipoHabitacion.id}"
+                                th:text="${tipoHabitacion.nombre}"
+                                th:selected="${tipoHabitacion.id} == ${habitacion.tipoHabitacion.id}">
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <input type="text" class="form-control"  id="descripcion" name="descripcion" th:value="${habitacion.descripcion}" required>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                    <a href="/habitaciones" type="submit" class="btn btn-secondary">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -9,9 +9,9 @@ import java.util.Set;
 @Entity
 @Table(name = "nacionalidades")
 public class Nacionalidad {
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     @NotBlank(message = "Pais es requerdio")
     private String pais;

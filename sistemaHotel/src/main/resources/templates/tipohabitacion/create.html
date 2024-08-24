@@ -3,21 +3,21 @@
       layout:decorate="/layouts/_mainLayout" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <div layout:fragment="content">
-    <h1>Crear nuevo Tipo de Habitacion</h1>
+    <h1>Crear nuevo Tipo de Habitación</h1>
     <form th:action="@{/tiposhabitacion/save}" th:object="${tipohabitacion}" method="post">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" placeholder="Escriba el nombre del tipo de habitacion" required>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" placeholder="Escriba el nombre del tipo de habitación" required>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="descripcion">Descripcion</label>
-                    <input type="text" class="form-control" th:field="*{descripcion}" id="descripcion" placeholder="Escriba La descripcion del tipo de habitacion" required>
+                    <label for="descripcion">Descripción:</label>
+                    <input type="text" class="form-control" th:field="*{descripcion}" id="descripcion" placeholder="Escriba la descripción del tipo de habitación" required>
                 </div>
             </div>
         </div>

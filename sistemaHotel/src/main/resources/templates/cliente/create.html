@@ -10,6 +10,7 @@
                 <div class="form-group">
                     <label for="nacionalidad">Nacionalidad</label>
                     <select id="nacionalidad" name="nacionalidadId" class="form-control" required>
+                        <option value="" disabled selected>Seleccione una nacionalidad</option>
                         <option th:each="nacionalidad : ${nacionalidades}" th:value="${nacionalidad.id}" th:text="${nacionalidad.nombre}"></option>
                     </select>
                 </div>
@@ -50,7 +51,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="telefono">Telefono</label>
+                    <label for="telefono">Teléfono</label>
                     <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Escriba el telefono del cliente" required>
                 </div>
             </div>
@@ -60,7 +61,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Guardar</button>
-                    <a href="/clientes">Regresar</a>
+                    <a href="/clientes" type="submit" class="btn btn-secondary">Regresar</a>
                 </div>
             </div>
         </div>
