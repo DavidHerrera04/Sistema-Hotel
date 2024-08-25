@@ -1,0 +1,42 @@
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="/layouts/_mainLayout" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div layout:fragment="content">
+    <h1>Detalles de la reservación</h1>
+    <div>
+        <hr>
+        <dl class="row">
+            <dt class="col-sm-2">ID</dt>
+            <dd class="col-sm-10" th:text="${reservacion.id}"></dd>
+
+            <dt class="col-sm-2">Estado</dt>
+            <dd class="col-sm-10" th:text="${reservacion.estado.nombre}"></dd>
+
+            <dt class="col-sm-2">Empleado</dt>
+            <dd class="col-sm-10" th:text="${reservacion.empleado.nombre}"></dd>
+
+            <dt class="col-sm-2">Cliente</dt>
+            <dd class="col-sm-10" th:text="${reservacion.cliente.nombre}"></dd>
+
+            <dt class="col-sm-2">Habitación</dt>
+            <dd class="col-sm-10" th:text="${reservacion.habitacion.numero}"></dd>
+
+            <dt class="col-sm-2">fechaHoraEntrada</dt>
+            <dd class="col-sm-10" th:text="${reservacion.fechaHoraEntrada}"></dd>
+
+            <dt class="col-sm-2">fechaHoraSalida</dt>
+            <dd class="col-sm-10" th:text="${reservacion.fechaHoraSalida}"></dd>
+
+            <dt class="col-sm-2">Costo total</dt>
+            <dd class="col-sm-10" th:text="${reservacion.costoTotal}"></dd>
+
+            <dt class="col-sm-2">Observación</dt>
+            <dd class="col-sm-10" th:text="${reservacion.observacion}"></dd>
+
+        </dl>
+
+        <a th:href="@{/reservaciones/edit/{id} (id = ${reservacion.id}) }" class="btn btn-primary">Editar</a>
+        <a th:href="@{/reservaciones}" type="submit" class="btn btn-secondary">Regresar</a>
+    </div>
+</div>

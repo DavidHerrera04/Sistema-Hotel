@@ -1,12 +1,8 @@
 package com.sistemaHotel.controladores;
 
-import com.sistemaHotel.modelos.Cliente;
 import com.sistemaHotel.modelos.Habitacion;
-import com.sistemaHotel.modelos.Nacionalidad;
 import com.sistemaHotel.modelos.TipoHabitacion;
-import com.sistemaHotel.servicios.interfaces.IClienteService;
 import com.sistemaHotel.servicios.interfaces.IHabitacionService;
-import com.sistemaHotel.servicios.interfaces.INacionalidadService;
 import com.sistemaHotel.servicios.interfaces.ITipoHabitacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
