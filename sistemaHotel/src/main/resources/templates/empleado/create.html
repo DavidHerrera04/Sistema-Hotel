@@ -49,11 +49,13 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="estado">Estado</label>
-                    <input type="text" class="form-control" th:field="*{estado}" id="estado" placeholder="Escriba el estado del empleado" required>
+                    <select id="estado" name="estado" class="form-control" required>
+                        <option>ACTIVO</option>
+                        <option>TEMPORAL</option>
+                    </select>
                 </div>
             </div>
         </div>
-
         <hr>
         <button type="submit" class="btn btn-primary">Guardar</button>
         <a th:href="@{/empleados}" type="submit" class="btn btn-secondary" >Regresar</a>

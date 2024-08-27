@@ -27,11 +27,14 @@
 
     <h1>Listado de reservaciones</h1>
     <a th:href="@{/reservaciones/create}" class="btn btn-outline-primary">Nueva reservación</a>
-    <table class="table table-striped">
+    <br>
+    <br>
+    <div class="table-responsive">
+    <table class="table table-striped ">
         <thead>
         <tr>
             <th>ID</th>
-            <th>Estado</th>
+            <th>Estados</th>
             <th>Empleado</th>
             <th>Cliente</th>
             <th>Habitación</th>
@@ -46,8 +49,8 @@
         <tr th:each="item: ${reservaciones}">
             <td th:text="${item.id}"></td>
             <td th:text="${item.estado.nombre}"></td>
-            <td th:text="${item.empleado.nombre}"></td>
-            <td th:text="${item.cliente.nombre}"></td>
+            <td th:text="|${item.empleado.nombre} ${item.empleado.apellido}|"></td>
+            <td th:text="|${item.cliente.nombre} ${item.cliente.apellido}|"></td>
             <td th:text="${item.habitacion.numero}"></td>
             <td th:text="${item.fechaHoraEntrada}"></td>
             <td th:text="${item.fechaHoraSalida}"></td>
@@ -62,7 +65,7 @@
         </tr>
         </tbody>
     </table>
-
+    </div>
     <nav aria-label="Page navigation example">
         <ul class="pagination">
             <li class="page-item" th:each="pagenumbers : ${pageNumbers}">

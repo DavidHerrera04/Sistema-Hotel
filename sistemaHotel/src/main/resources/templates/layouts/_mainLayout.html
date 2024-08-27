@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -31,10 +31,13 @@
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#!">Configuracion</a></li>
-                <li><a class="dropdown-item" href="#!">Info Inicio</a></li>
+                <div sec:authorize="isAnonymous()">
+                    <li><a class="dropdown-item" th:href="@{/login}">Iniciar Sesion</a></li>
+                </div>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="#!">Salir</a></li>
+                <div sec:authorize="isAuthenticated()">
+                    <li><a class="dropdown-item" th:href="@{/logout}">Salir</a></li>
+                </div>
             </ul>
         </li>
     </ul>
@@ -45,6 +48,7 @@
             <div class="sb-sidenav-menu">
                 <div class="nav">
                     <div class="sb-sidenav-menu-heading">Mantenimiento</div>
+                    <div sec:authorize="hasAnyAuthority('admin')">
                     <a class="nav-link" th:href="@{/empleados}">
                         <div class="sb-nav-link-icon text-light"><i class="fas fa-tachometer-alt"></i></div>
                         Empleados
@@ -61,6 +65,8 @@
                         <div class="sb-nav-link-icon text-light"><i class="fas fa-tachometer-alt"></i></div>
                         Clientes
                     </a>
+                    </div>
+                    <div sec:authorize="hasAnyAuthority('admin', 'registrador')">
                     <a class="nav-link" th:href="@{/habitaciones}">
                         <div class="sb-nav-link-icon text-light"><i class="fas fa-tachometer-alt"></i></div>
                         Habitaciones
@@ -70,10 +76,14 @@
                         Reservaciones
                     </a>
                 </div>
+                </div>
             </div>
             <div class="sb-sidenav-footer">
-                <div class="small">Logged in as:</div>
-                Sistema Hotel
+                <div sec:authorize="isAuthenticated()" class="small">
+                    Has iniciado como:
+                    <span class="text-light" sec:authentication="name">"name"</span>
+                </div>
+                Sistema de Asistencia
             </div>
         </nav>
     </div>

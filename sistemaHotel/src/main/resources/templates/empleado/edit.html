@@ -50,12 +50,14 @@
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="estado">Estado</label>
-                    <input type="text" class="form-control" th:field="*{estado}" id="estado" placeholder="Escriba el estado del empleado" required>
+                    <select id="estado" name="estado" class="form-control" required>
+                        <option>INACTIVO</option>
+                        <option>ACTIVO</option>
+                    </select>
                 </div>
             </div>
         </div>

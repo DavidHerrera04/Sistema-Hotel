@@ -17,14 +17,6 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="estado">Estado</label>
-                    <input type="text" class="form-control"  id="estado" name="estado" th:value="${habitacion.estado}"  required>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
                     <label for="costo">Costo</label>
                     <input type="text" class="form-control"  id="costo" name="costo" th:value="${habitacion.costo}"  required>
                 </div>
@@ -52,7 +44,17 @@
                 </div>
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="estado">Estado</label>
+                    <select id="estado" name="estado" class="form-control" required>
+                        <option>ACTIVA</option>
+                        <option>INACTIVA</option>
+                    </select>
+                </div>
+            </div>
+        </div>
         <hr>
         <div class="row">
             <div class="col-md-6">

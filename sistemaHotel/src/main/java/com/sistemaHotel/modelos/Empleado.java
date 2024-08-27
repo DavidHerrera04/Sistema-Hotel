@@ -3,6 +3,9 @@ package com.sistemaHotel.modelos;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
+import java.util.LinkedList;
+import java.util.List;
+
 @Entity
 @Table(name = "empleados")
 public class Empleado {
@@ -27,6 +30,18 @@ public class Empleado {
 
     @NotBlank(message = "Estado es requerido")
     private String estado;
+
+    @NotBlank(message = "El login de empleado es requerido")
+    private String login;
+
+    @NotBlank(message = "La contraseña es requerida")
+    private String clave;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "empleado_rol",
+            joinColumns = @JoinColumn(name = "empleado_id"),
+            inverseJoinColumns = @JoinColumn(name = "rol_id"))
+    private List<Rol> roles;
 
     public Integer getId() {
         return id;
@@ -82,5 +97,36 @@ public class Empleado {
 
     public void setEstado(@NotBlank(message = "Estado es requerido") String estado) {
         this.estado = estado;
+    }
+
+    public @NotBlank(message = "El login de empleado es requerido") String getLogin() {
+        return login;
+    }
+
+    public void setLogin(@NotBlank(message = "El login de empleado es requerido") String login) {
+        this.login = login;
+    }
+
+    public @NotBlank(message = "La contraseña es requerida") String getClave() {
+        return clave;
+    }
+
+    public void setClave(@NotBlank(message = "La contraseña es requerida") String clave) {
+        this.clave = clave;
+    }
+
+    public List<Rol> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Rol> roles) {
+        this.roles = roles;
+    }
+
+    public void agregar(Rol tempRol) {
+        if (roles == null) {
+            roles = new LinkedList<>();
+        }
+        roles.add(tempRol);
     }
 }
