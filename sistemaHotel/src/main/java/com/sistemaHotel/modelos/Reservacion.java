@@ -1,5 +1,6 @@
 package com.sistemaHotel.modelos;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -33,10 +34,12 @@ public class Reservacion {
 
     @Column(nullable = false)
     @NotNull(message = "La fecha de entrada es obligatoria")
+    @JsonFormat(pattern = "MM-dd-yyyy HH:mm:ss")
     private LocalDateTime fechaHoraEntrada;
 
     @Column(nullable = false)
     @NotNull(message = "La fecha de salida es obligatoria")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime fechaHoraSalida;
 
     @Column(nullable = false)

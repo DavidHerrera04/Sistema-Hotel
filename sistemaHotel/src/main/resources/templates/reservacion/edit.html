@@ -66,7 +66,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="fechaHoraEntrada">fechaHoraEntrada:</label>
-                    <input type="text" class="form-control"  id="fechaHoraEntrada" name="fechaHoraEntrada" th:value="${reservacion.fechaHoraEntrada}" required>
+                    <input type="datetime-local" class="form-control"  id="fechaHoraEntrada" name="fechaHoraEntrada" th:value="${reservacion.fechaHoraEntrada}" required>
                 </div>
             </div>
         </div>
@@ -74,7 +74,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="fechaHoraSalida">fechaHoraSalida:</label>
-                    <input type="text" class="form-control"  id="fechaHoraSalida" name="fechaHoraSalida" th:value="${reservacion.fechaHoraSalida}" required>
+                    <input type="datetime-local" class="form-control"  id="fechaHoraSalida" name="fechaHoraSalida" th:value="${reservacion.fechaHoraSalida}" required>
                 </div>
             </div>
         </div>
