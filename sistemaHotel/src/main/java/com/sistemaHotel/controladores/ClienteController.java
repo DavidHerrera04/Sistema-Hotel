@@ -31,7 +31,7 @@ public class ClienteController {
     public String index(Model model, @RequestParam("page") Optional<Integer> page, @RequestParam("size") Optional<Integer> size) {
         int currentPage = page.orElse(1) - 1; //si no esta seteado se asigna 0
         int pageSize = size.orElse(5); // tamaño de la pagina, se asigna 5
-        Pageable pageable = (Pageable) PageRequest.of(currentPage, pageSize);
+        Pageable pageable = PageRequest.of(currentPage, pageSize);
 
         Page<Cliente> clientes = clienteService.buscarTodosPaginados(pageable);
         model.addAttribute("clientes", clientes);
@@ -39,9 +39,9 @@ public class ClienteController {
         int totalPage = clientes.getTotalPages();
         if (totalPage > 0)
         {
-            List<Integer> pageNumber = IntStream.rangeClosed(1, totalPage)
+            List<Integer> pageNumbers = IntStream.rangeClosed(1, totalPage)
                     .boxed().collect(Collectors.toList());
-            model.addAttribute("pageNumbers", pageNumber);
+            model.addAttribute("pageNumbers", pageNumbers);
 
 
         }

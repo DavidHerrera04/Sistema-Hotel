@@ -6,5 +6,5 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IClienteRepository extends JpaRepository<Cliente , Integer> {
-    Page<Cliente> findByOrderByNacionalidadDesc(Pageable pageable);
+    Page<Cliente> findByOrderByIdAsc(Pageable pageable);
 }

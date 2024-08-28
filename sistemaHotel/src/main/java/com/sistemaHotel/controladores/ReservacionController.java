@@ -49,9 +49,9 @@ public class ReservacionController {
         int totalPage = reservaciones.getTotalPages();
         if (totalPage > 0)
         {
-            List<Integer> pageNumber = IntStream.rangeClosed(1, totalPage)
+            List<Integer> pageNumbers = IntStream.rangeClosed(1, totalPage)
                     .boxed().collect(Collectors.toList());
-            model.addAttribute("pageNumbers", pageNumber);
+            model.addAttribute("pageNumbers", pageNumbers);
         }
         return "reservacion/index";
     }

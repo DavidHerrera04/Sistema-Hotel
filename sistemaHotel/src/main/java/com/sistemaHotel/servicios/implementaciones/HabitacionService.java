@@ -22,7 +22,7 @@ public class HabitacionService implements IHabitacionService {
 
     @Override
     public Page<Habitacion> buscarTodosPaginados(Pageable pPageable) {
-        return habitacionRepository.findByOrderByTipoHabitacionDesc(pPageable);
+        return habitacionRepository.findByOrderByIdAsc(pPageable);
     }
 
     @Override

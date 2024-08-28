@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IReservacionRepository extends JpaRepository<Reservacion, Integer> {
 
-    Page<Reservacion> findByOrderByEstadoDesc(Pageable pageable);
+    Page<Reservacion> findByOrderByIdAsc(Pageable pageable);
 
 }
