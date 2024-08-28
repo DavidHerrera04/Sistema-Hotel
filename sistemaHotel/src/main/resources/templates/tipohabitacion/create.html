@@ -3,13 +3,14 @@
       layout:decorate="/layouts/_mainLayout" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <div layout:fragment="content">
-    <h1>Crear nuevo Tipo de Habitación</h1>
+    <h1>Crear nuevo tipo de habitación</h1>
+    <br>
     <form th:action="@{/tiposhabitacion/save}" th:object="${tipohabitacion}" method="post">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba el nombre del cliente"
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba el nombre de la habitación"
                            required pattern="[A-Za-z0-9áéíóúÁÉÍÓÚüÜñÑ\s.,;:!?]+"  title="El nombre solo puede contener letras">
                 </div>
             </div>

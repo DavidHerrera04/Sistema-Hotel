@@ -18,7 +18,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="costo">Costo</label>
-                    <input type="text" class="form-control" id="costo" name="costo" th:value="${habitacion.costo}" placeholder="Escriba el costo de la habitacion"
+                    <input type="number" class="form-control" id="costo" name="costo" th:value="${habitacion.costo}" placeholder="Escriba el costo de la habitacion"
                            required pattern="^\d+(,\d{1,2})?$" title="Ingrese un número válido con hasta dos decimales (ej. 100 o 100,50)">                </div>
             </div>
         </div>

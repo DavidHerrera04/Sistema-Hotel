@@ -52,7 +52,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="fechaHoraEntrada">fechaHoraEntrada</label>
+                    <label for="fechaHoraEntrada">Entrada</label>
                     <input type="datetime-local" class="form-control" id="fechaHoraEntrada" name="fechaHoraEntrada" required>
                 </div>
             </div>
@@ -61,7 +61,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="fechaHoraSalida">fechaHoraSalida</label>
+                    <label for="fechaHoraSalida">Salida</label>
                     <input type="datetime-local" class="form-control" id="fechaHoraSalida" name="fechaHoraSalida" required>
                 </div>
             </div>
@@ -69,8 +69,8 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="costoTotal">Costo Total</label>
-                    <input type="text" class="form-control" id="costoTotal" name="costoTotal" placeholder="Escriba el costo Total de la habitacion"
+                    <label for="costoTotal">Total</label>
+                    <input type="number" class="form-control" id="costoTotal" name="costoTotal" placeholder="Escriba el costo Total de la habitación"
                            required pattern="^\d+(,\d{1,2})?$" title="Ingrese un número válido con hasta dos decimales (ej. 100 o 100,50)">
                 </div>
             </div>
@@ -79,8 +79,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="observacion">Observación</label>
-                    <input type="text" class="form-control" id="observacion" name="observacion" placeholder="Escriba la observacion"
-                           required pattern="[A-Za-z\s]+" title="La observacion solo puede contener letras">
+                    <input type="text" class="form-control" id="observacion" name="observacion" placeholder="Escriba una observación"
+                           required pattern="[A-Za-z\s]+" title="La observación solo puede contener letras">
                 </div>
             </div>
         </div>

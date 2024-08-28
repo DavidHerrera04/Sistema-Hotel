@@ -34,12 +34,12 @@ public class Reservacion {
 
     @Column(nullable = false)
     @NotNull(message = "La fecha de entrada es obligatoria")
-    @JsonFormat(pattern = "MM-dd-yyyy HH:mm:ss")
+    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     private LocalDateTime fechaHoraEntrada;
 
     @Column(nullable = false)
     @NotNull(message = "La fecha de salida es obligatoria")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     private LocalDateTime fechaHoraSalida;
 
     @Column(nullable = false)
@@ -108,6 +108,8 @@ public class Reservacion {
 
     public @NotNull(message = "Costo Total es obligatorio") @Positive(message = "Costo Total debe ser mayor que cero") BigDecimal getCostoTotal() {
         return costoTotal;
+
+
     }
 
     public void setCostoTotal(@NotNull(message = "Costo Total es obligatorio") @Positive(message = "Costo Total debe ser mayor que cero") BigDecimal costoTotal) {

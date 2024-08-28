@@ -3,7 +3,7 @@
       layout:decorate="/layouts/_mainLayout" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <div layout:fragment="content">
-    <h1>Editar tipo de habitacion</h1>
+    <h1>Editar tipo de habitación</h1>
     <form th:action="@{/tiposhabitacion/save}" th:object="${tipohabitacion}" method="post">
         <input type="hidden" th:field="*{id}">
         <div class="row">
@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="descripcion">Descripcion</label>
+                    <label for="descripcion">Descripción</label>
                     <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Escriba la descripción (letras, números y puntuación básica)" th:value="${tipohabitacion.descripcion}"
                            required pattern="[A-Za-z0-9áéíóúÁÉÍÓÚüÜñÑ\s.,;:!?]+" title="La descripción puede contener letras, números, espacios, tildes y puntuación básica">
                 </div>
