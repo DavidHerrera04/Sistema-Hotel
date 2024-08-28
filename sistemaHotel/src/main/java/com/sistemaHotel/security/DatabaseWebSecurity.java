@@ -1,3 +1,5 @@
+
+
 package com.sistemaHotel.security;
 
 import org.springframework.context.annotation.Bean;
@@ -28,7 +30,7 @@ public class DatabaseWebSecurity {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http.authorizeHttpRequests(authorize -> authorize
                         // aperturar el acceso a los recursos estáticos
-                        .requestMatchers("/assets/**", "/css/**", "/js/**").permitAll()
+                        .requestMatchers("/assets/**", "/css/**", "/js/**", "/lib/**", "/mail/**", "/img/**").permitAll()
                         // las vistas públicas no requieren autenticación
                         .requestMatchers("/", "/privacy", "/terms").permitAll()
 
