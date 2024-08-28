@@ -39,6 +39,7 @@
             <th>Dui</th>
             <th>Teléfono</th>
             <th>Estado</th>
+            <th>Login</th>
             <th>Acciones</th>
         </tr>
         </thead>
@@ -51,6 +52,7 @@
             <td th:text="${item.dui}"></td>
             <td th:text="${item.telefono}"></td>
             <td th:text="${item.estado}"></td>
+            <td th:text="${item.login}"></td>
             <td>
                 <a th:href="@{/empleados/details/{id} (id=${item.id}) }" class="btn btn-outline-secondary">Detalles</a>
                 <a th:href="@{/empleados/edit/{id} (id=${item.id}) }" class="btn btn-outline-info">Editar</a>

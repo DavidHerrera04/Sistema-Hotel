@@ -27,18 +27,27 @@ public class DatabaseWebSecurity {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http.authorizeHttpRequests(authorize -> authorize
-                // aperturar el acceso a los recursos estáticos
-                .requestMatchers("/assets/**", "/css/**", "/js/**").permitAll()
-                // las vistas públicas no requieren autenticación
-                .requestMatchers("/", "/privacy", "/terms").permitAll()
+                        // aperturar el acceso a los recursos estáticos
+                        .requestMatchers("/assets/**", "/css/**", "/js/**").permitAll()
+                        // las vistas públicas no requieren autenticación
+                        .requestMatchers("/", "/privacy", "/terms").permitAll()
 
-                // Asignar permisos a URLs por ROLES
-                .requestMatchers("/estado/**").hasAnyAuthority("admin")
-                .requestMatchers("/empleados/**").hasAnyAuthority("admin")
-                .requestMatchers("/reservaciones/**").hasAnyAuthority("admin", "registrador")
+                        // Asignar permisos a URLs por ROLES
+                        .requestMatchers("/estado/**").hasAnyAuthority("admin")
+                        .requestMatchers("/empleados/**").hasAnyAuthority("admin")
+                        .requestMatchers("/reservaciones/**").hasAnyAuthority("admin", "registrador")
+                        .anyRequest().authenticated())
+                .formLogin(form -> form
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/", true) // Redirige a la página de inicio al éxito
+                        .failureUrl("/login?error=true") // Redirige a la página de inicio de sesión con mensaje de error en caso de fallo
+                        .permitAll())
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/")
+                        .permitAll());
 
-                // todas las demás vistas requieren autenticación
-                .anyRequest().authenticated());
+        // todas las demás vistas requieren autenticación
         http.formLogin(form -> form.loginPage("/login").permitAll());
 
         return http.build();

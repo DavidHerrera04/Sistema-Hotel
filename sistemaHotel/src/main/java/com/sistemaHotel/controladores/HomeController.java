@@ -15,7 +15,13 @@ public class HomeController {
     }
 
     @GetMapping("/login")
-    public String mostrarLogin(){
+    public String mostrarLogin(HttpServletRequest request){
+        // Verificar si hay un parámetro de error en la solicitud
+        String errorMessage = request.getParameter("error");
+        if ("true".equals(errorMessage)) {
+            request.setAttribute("errorMessage", "Credenciales incorrectas. Intenta nuevamente.");
+        }
+
         return "home/formLogin";
     }
 

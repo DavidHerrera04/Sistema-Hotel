@@ -10,7 +10,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control"  id="nombre" name="nombre" th:value="${cliente.nombre}" placeholder="Escriba el nombre del cliente"
+                    <input type="text" class="form-control"  id="nombre" th:field="*{nombre}" placeholder="Escriba el nombre del cliente"
                            required pattern="[A-Za-z\s]+" title="El nombre solo puede contener letras">
                 </div>
             </div>
@@ -20,7 +20,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="apellido">Apellido</label>
-                    <input type="text" class="form-control"  id="apellido" name="apellido" th:value="${cliente.apellido}" placeholder="Escriba el apellido del cliente"
+                    <input type="text" class="form-control"  id="apellido" th:field="*{apellido}" placeholder="Escriba el apellido del cliente"
                            required pattern="[A-Za-z\s]+" title="El apellido solo puede contener letras">
 
                 </div>
@@ -31,18 +31,16 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="direccion">Dirección</label>
-                    <input type="text" class="form-control"  id="direccion" name="direccion" th:value="${cliente.direccion}" placeholder="Escriba la direccion del cliente"
-                           required pattern=".{5,}" title="La dirección debe tener al menos 5 caracteres">
-
+                    <input type="text" class="form-control"  id="direccion" th:field="*{direccion}" placeholder="Escriba la direccion del cliente"
+                    required pattern=".{5,}" title="La dirección debe tener al menos 5 caracteres">
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="dui">Dui</label>
-                    <input type="text" class="form-control"  id="dui" name="dui" th:value="${cliente.dui}" placeholder="Escriba el documento del cliente"
+                    <label for="dui">Documento</label>
+                    <input type="text" class="form-control"  id="dui" th:field="*{dui}" placeholder="Escriba el dui del empleado"
                            required pattern="\d{8}-\d{1}" title="El DUI debe tener el formato 00000000-0">
 
                 </div>
@@ -53,7 +51,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="telefono">Teléfono</label>
-                    <input type="text" class="form-control"  id="telefono" name="telefono" th:value="${cliente.telefono}" placeholder="Escriba el telefono del cliente"
+                    <input type="text" class="form-control"  id="telefono" th:field="*{telefono}" placeholder="Escriba el telefono del cliente"
                            required pattern="\d{4}-\d{4}" title="El número de teléfono debe tener el formato 0000-000, son exactamente 8 dígitos divididos por un guion">
                 </div>
             </div>
@@ -62,14 +60,31 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="estado">Estado</label>
-                    <select id="estado" name="estado" class="form-control" required>
+                    <select id="estado" class="form-control" required>
                         <option>INACTIVO</option>
                         <option>ACTIVO</option>
                     </select>
                 </div>
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="login">Login</label>
+                    <input type="text" class="form-control" th:field="*{login}" id="login" placeholder="Escriba el usuario del empleado"
+                           required pattern="[A-Za-z0-9\s.,;:!?]+" title="La descripción puede contener letras, números, espacios y signos">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="clave">Clave</label>
+                    <input type="text" class="form-control" th:field="*{clave}" id="clave" placeholder="Escriba la contraseña del usuario"
+                           required pattern="[A-Za-z0-9\s.,;:!?]+" title="La clave puede contener letras, números y signos">
+                </div>
+            </div>
+        </div>
         <hr>
         <button type="submit" class="btn btn-primary">Modificar</button>
         <a th:href="@{/empleados}" type="submit" class="btn btn-secondary">Regresar</a>

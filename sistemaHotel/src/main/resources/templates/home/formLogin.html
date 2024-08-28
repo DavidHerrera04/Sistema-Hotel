@@ -8,15 +8,16 @@
 <body>
 <div class="session">
     <div class="left">
-<style type="text/css">
-	.st01{fill:#fff;}
-</style>
+        <style type="text/css">
+            .st01{fill:#fff;}
+        </style>
     </div>
     <form class="log-in" autocomplete="off" th:action="@{/login}" method="post">
         <h4>Sistema  <span>Hotel</span></h4>
         <p>Bienvenido/a Ingresa con tu cuenta proporcionada:</p>
+        <p th:text="${errorMessage}" style="color: #6a1a21;">Credenciales incorrectas. Intenta nuevamente.</p>
         <div class="floating-label">
-            <input placeholder="Usuario" type="text" name="username" autocomplete="off">
+            <input placeholder="Usuario" type="text" name="username" autocomplete="off" required>
             <label>Usuario:</label>
             <div class="icon">
                 <?xml version="1.0" encoding="UTF-8"?>
@@ -32,7 +33,7 @@
             </div>
         </div>
         <div class="floating-label">
-            <input placeholder="Contraseña" type="password" name="password" autocomplete="off">
+            <input placeholder="Contraseña" type="password" name="password" autocomplete="off" required>
             <label>Contraseña:</label>
             <div class="icon">
                 <?xml version="1.0" encoding="UTF-8"?>

@@ -61,6 +61,25 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="login">Login</label>
+                    <input type="text" class="form-control" th:field="*{login}" id="login" placeholder="Escriba el usuario del empleado"
+                           required pattern="[A-Za-z0-9\s.,;:!?]+" title="La descripción puede contener letras, números, espacios y signos">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="clave">Clave</label>
+                    <input type="password" class="form-control" th:field="*{clave}" id="clave" placeholder="Escriba la contraseña del usuario"
+                           required pattern="[A-Za-z0-9\s.,;:!?]+" title="La clave puede contener letras, números y signos">
+                </div>
+            </div>
+        </div>
+
         <hr>
         <button type="submit" class="btn btn-primary">Guardar</button>
         <a th:href="@{/empleados}" type="submit" class="btn btn-secondary" >Regresar</a>
