@@ -20,7 +20,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba el nombre del cliente" required>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba el nombre del cliente"
+                           required pattern="[A-Za-z\s]+" title="El nombre solo puede contener letras">
                 </div>
             </div>
         </div>
@@ -28,7 +29,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="apellido">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Escriba el apellido del cliente" required>
+                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Escriba el apellido del cliente"
+                           required pattern="[A-Za-z\s]+" title="El apellido solo puede contener letras">
                 </div>
             </div>
         </div>
@@ -36,7 +38,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="direccion">Direccion</label>
-                    <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Escriba la direccion del cliente" required>
+                    <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Escriba la direccion del cliente"
+                           required pattern=".{5,}" title="La dirección debe tener al menos 5 caracteres">
                 </div>
             </div>
         </div>
@@ -44,7 +47,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="documento">Documento</label>
-                    <input type="text" class="form-control" id="documento" name="documento" placeholder="Escriba el documento del cliente" required>
+                    <input type="text" class="form-control" id="documento" name="documento" placeholder="Escriba el documento del cliente"
+                           required pattern="\d{8}-\d{1}" title="El DUI debe tener el formato 00000000-0">
                 </div>
             </div>
         </div>
@@ -52,7 +56,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="telefono">Teléfono</label>
-                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Escriba el telefono del cliente" required>
+                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Escriba el telefono del cliente"
+                           required pattern="\d{4}-\d{4}" title="El número de teléfono debe tener el formato 0000-000, son exactamente 8 dígitos divididos por un guion">
                 </div>
             </div>
         </div>

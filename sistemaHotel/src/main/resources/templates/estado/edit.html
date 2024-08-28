@@ -10,7 +10,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" placeholder="Escriba el nombre del estado" required>
+                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" placeholder="Escriba el nombre del estado"
+                    required pattern="[A-Za-z\s]+" title="El nombre solo puede contener letras">
                 </div>
             </div>
         </div>
