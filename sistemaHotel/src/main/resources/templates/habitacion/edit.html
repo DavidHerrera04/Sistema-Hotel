@@ -10,16 +10,16 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="numero">Número</label>
-                    <input type="text" class="form-control"  id="numero" name="numero" th:value="${habitacion.numero}"  required>
-                </div>
+                    <input type="text" class="form-control" id="numero" name="numero" placeholder="Escriba el número de la habitacion"
+                           required pattern="[A-Za-z0-9]+"  title="El número de habitación puede contener letras y números, sin espacios">                </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="costo">Costo</label>
-                    <input type="text" class="form-control"  id="costo" name="costo" th:value="${habitacion.costo}"  required>
-                </div>
+                    <input type="text" class="form-control" id="costo" name="costo" placeholder="Escriba el costo de la habitacion"
+                           required pattern="^\d+(,\d{1,2})?$" title="Ingrese un número válido con hasta dos decimales (ej. 100 o 100,50)">                </div>
             </div>
         </div>
         <div class="row">
@@ -40,8 +40,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="descripcion">Descripción</label>
-                    <input type="text" class="form-control"  id="descripcion" name="descripcion" th:value="${habitacion.descripcion}" required>
-                </div>
+                    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Escriba la descripción (letras, números y puntuación básica)"
+                           required pattern="[A-Za-z0-9\s.,;:!?]+" title="La descripción puede contener letras, números, espacios y puntuación básica">                </div>
             </div>
         </div>
         <div class="row">

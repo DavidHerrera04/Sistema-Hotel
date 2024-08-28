@@ -9,7 +9,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" placeholder="Escriba el nombre del empleado" required>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba el nombre del cliente"
+                           required pattern="[A-Za-z\s]+" title="El nombre solo puede contener letras">
                 </div>
             </div>
         </div>
@@ -17,7 +18,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="apellido">Apellido</label>
-                    <input type="text" class="form-control" th:field="*{apellido}" id="apellido" placeholder="Escriba el apellido del empleado" required>
+                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Escriba el apellido del cliente"
+                           required pattern="[A-Za-z\s]+" title="El apellido solo puede contener letras">
                 </div>
             </div>
         </div>
@@ -25,7 +27,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="direccion">Dirección</label>
-                    <input type="text" class="form-control" th:field="*{direccion}" id="direccion" placeholder="Escriba la dirección del empleado" required>
+                    <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Escriba la direccion del cliente"
+                           required pattern=".{5,}" title="La dirección debe tener al menos 5 caracteres">
                 </div>
             </div>
         </div>
@@ -33,15 +36,17 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="dui">Dui</label>
-                    <input type="text" class="form-control" th:field="*{dui}" id="dui" placeholder="00000000-0" required>
+                    <input type="text" class="form-control" id="dui" name="dui" placeholder="Escriba el dui del cliente"
+                           required pattern="\d{8}-\d{1}" title="El DUI debe tener el formato 00000000-0">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="telefono">Teléfono</label>
-                    <input type="text" class="form-control" th:field="*{telefono}" id="telefono" placeholder="0000-0000" required>
+                    <label for="telefono">Telefono</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Escriba el telefono del cliente"
+                           required pattern="\d{4}-\d{4}" title="El número de teléfono debe tener el formato 0000-000, son exactamente 8 dígitos divididos por un guion">
                 </div>
             </div>
         </div>
@@ -50,7 +55,6 @@
                 <div class="form-group">
                     <label for="estado">Estado</label>
                     <select id="estado" name="estado" class="form-control" required>
-                        <option value="" disabled selected>Seleccione un estado</option>
                         <option>ACTIVO</option>
                         <option>TEMPORAL</option>
                     </select>
@@ -60,8 +64,5 @@
         <hr>
         <button type="submit" class="btn btn-primary">Guardar</button>
         <a th:href="@{/empleados}" type="submit" class="btn btn-secondary" >Regresar</a>
-
     </form>
-
-
 </div>

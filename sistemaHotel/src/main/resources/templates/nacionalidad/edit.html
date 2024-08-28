@@ -10,11 +10,13 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="pais">Pais</label>
-                    <input type="text" class="form-control" th:field="*{pais}" id="pais" placeholder="Escriba el nombre del pais" required>
+                    <input type="text" class="form-control" id="pais" name="pais" placeholder="Escriba el pais "
+                           required pattern="[A-Za-zñÑ\s]+" title="El  pais solo puede contener letras">
                 </div>
                 <div class="form-group">
                     <label for="nombre">Nacionalidad</label>
-                    <input type="text" class="form-control" th:field="*{nombre}" id="nombre" placeholder="Escriba el nombre de la nacionalidad" required>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba la nacionalidad "
+                           required pattern="[A-Za-zñÑ\s]+"  title="La nacionalidad solo puede contener letras">
                 </div>
             </div>
         </div>

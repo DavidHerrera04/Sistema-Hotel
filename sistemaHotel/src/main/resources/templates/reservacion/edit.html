@@ -1,3 +1,4 @@
+
 <html lang="en"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="/layouts/_mainLayout" xmlns:th="http://www.w3.org/1999/xhtml">
@@ -66,7 +67,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="fechaHoraEntrada">fechaHoraEntrada:</label>
-                    <input type="datetime-local" class="form-control"  id="fechaHoraEntrada" name="fechaHoraEntrada" th:value="${reservacion.fechaHoraEntrada}" required>
+                    <input type="text" class="form-control"  id="fechaHoraEntrada" name="fechaHoraEntrada" th:value="${reservacion.fechaHoraEntrada}" required>
                 </div>
             </div>
         </div>
@@ -74,7 +75,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="fechaHoraSalida">fechaHoraSalida:</label>
-                    <input type="datetime-local" class="form-control"  id="fechaHoraSalida" name="fechaHoraSalida" th:value="${reservacion.fechaHoraSalida}" required>
+                    <input type="text" class="form-control"  id="fechaHoraSalida" name="fechaHoraSalida" th:value="${reservacion.fechaHoraSalida}" required>
                 </div>
             </div>
         </div>
@@ -82,7 +83,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="costoTotal">Costo total:</label>
-                    <input type="text" class="form-control"  id="costoTotal" name="costoTotal" th:value="${reservacion.costoTotal}" required>
+                    <input type="text" class="form-control" id="costoTotal" name="costoTotal" placeholder="Escriba el costo Total de la habitacion"
+                           required pattern="^\d+(,\d{1,2})?$" title="Ingrese un número válido con hasta dos decimales (ej. 100 o 100,50)">
                 </div>
             </div>
         </div>
@@ -90,7 +92,8 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="observacion">Observación:</label>
-                    <input type="text" class="form-control"  id="observacion" name="observacion" th:value="${reservacion.observacion}" required>
+                    <input type="text" class="form-control" id="observacion" name="observacion" placeholder="Escriba la observacion"
+                           required pattern="[A-Za-z\s]+" title="La observacion solo puede contener letras">
                 </div>
             </div>
         </div>
@@ -105,3 +108,4 @@
         </div>
     </form>
 </div>
+
