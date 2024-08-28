@@ -11,7 +11,7 @@
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" th:field="*{nombre}" id="nombre"placeholder="Escriba el nombre del cliente"
-                           required pattern="[A-Za-z\s]+" title="El nombre solo puede contener letras">
+                           required pattern="[A-Za-z0-9áéíóúÁÉÍÓÚüÜñÑ\s.,;:!?]+"  title="El nombre solo puede contener letras">
                 </div>
             </div>
         </div>
@@ -19,8 +19,9 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="descripcion">Descripcion</label>
-                    <input type="text" class="form-control" th:field="*{descripcion}" id="descripcion" placeholder="Escriba la descripción (letras, números y puntuación básica)"
-                           required pattern="[A-Za-z0-9\s.,;:!?]+" title="La descripción puede contener letras, números, espacios y puntuación básica">                </div>
+                    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Escriba la descripción (letras, números y puntuación básica)" th:value="${tipohabitacion.descripcion}"
+                           required pattern="[A-Za-z0-9áéíóúÁÉÍÓÚüÜñÑ\s.,;:!?]+" title="La descripción puede contener letras, números, espacios, tildes y puntuación básica">
+                </div>
             </div>
         </div>
         <hr>

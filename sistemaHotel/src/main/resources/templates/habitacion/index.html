@@ -47,7 +47,7 @@
             <td th:text="${item.id}"></td>
             <td th:text="${item.numero}"></td>
             <td th:text="${item.estado}"></td>
-            <td th:text="${item.costo}"></td>
+            <td th:text="'$' + ${item.costo}"></td>
             <td th:text="${item.tipoHabitacion.nombre}"></td>
             <td th:text="${item.descripcion}"></td>
             <td>

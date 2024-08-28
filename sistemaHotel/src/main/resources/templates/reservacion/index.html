@@ -54,7 +54,7 @@
             <td th:text="${item.habitacion.numero}"></td>
             <td th:text="${item.fechaHoraEntrada}"></td>
             <td th:text="${item.fechaHoraSalida}"></td>
-            <td th:text="${item.costoTotal}"></td>
+            <td th:text="'$' + ${item.costoTotal}"></td>
             <td th:text="${item.observacion}"></td>
 
             <td>
