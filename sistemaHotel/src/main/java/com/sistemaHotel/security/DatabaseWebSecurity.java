@@ -30,9 +30,9 @@ public class DatabaseWebSecurity {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http.authorizeHttpRequests(authorize -> authorize
                         // aperturar el acceso a los recursos estáticos
-                        .requestMatchers("/assets/**", "/css/**", "/js/**", "/lib/**", "/mail/**", "/img/**").permitAll()
+                        .requestMatchers("/assets/**", "/css/**", "/js/**", "/lib/**", "/mail/**").permitAll()
                         // las vistas públicas no requieren autenticación
-                        .requestMatchers("/", "/privacy", "/terms").permitAll()
+                        .requestMatchers("/", "/privacy", "/terms", "/img/**").permitAll()
 
                         // Asignar permisos a URLs por ROLES
                         .requestMatchers("/estado/**").hasAnyAuthority("admin")

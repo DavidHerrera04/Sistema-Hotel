@@ -19,7 +19,7 @@ public class TipoHabitacionService implements ITipoHabitacionService {
 
     @Override
     public Page<TipoHabitacion> buscarTodosPaginados(Pageable pageable) {
-        return tipoHabitacionRepository.findAll(pageable);
+        return tipoHabitacionRepository.findByOrderByIdDesc(pageable);
     }
 
     @Override

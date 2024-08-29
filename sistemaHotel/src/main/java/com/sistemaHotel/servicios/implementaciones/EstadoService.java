@@ -18,7 +18,7 @@ public class EstadoService implements IEstadoService {
 
     @Override
     public Page<Estado> buscarTodosPaginados(Pageable pPageable) {
-        return estadoRepository.findAll(pPageable);
+        return estadoRepository.findByOrderByIdDesc(pPageable);
     }
 
     @Override

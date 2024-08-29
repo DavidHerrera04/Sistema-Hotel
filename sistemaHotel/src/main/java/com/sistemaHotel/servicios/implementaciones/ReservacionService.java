@@ -23,7 +23,7 @@ public class ReservacionService implements IReservacionService {
 
     @Override
     public Page<Reservacion> buscarTodosPaginados(Pageable pPageable) {
-        return reservacionRepository.findByOrderByIdAsc(pPageable);
+        return reservacionRepository.findByOrderByIdDesc(pPageable);
     }
 
     @Override

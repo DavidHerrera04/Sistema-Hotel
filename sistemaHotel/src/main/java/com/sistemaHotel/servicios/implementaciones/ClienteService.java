@@ -25,7 +25,7 @@ public class ClienteService implements IClienteService {
 
     @Override
     public Page<Cliente> buscarTodosPaginados(Pageable pageable) {
-        return clienteRepository.findByOrderByIdAsc(pageable);
+        return clienteRepository.findByOrderByIdDesc(pageable);
     }
 
     @Override

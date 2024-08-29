@@ -32,7 +32,7 @@
     <table class="table table-striped table-bordered table-responsive">
         <thead>
         <tr>
-            <th>Id</th>
+            <th>ID</th>
             <th>Nombre</th>
             <th>Acciones</th>
 
@@ -43,9 +43,15 @@
             <td th:text="${item.id}"></td>
             <td th:text="${item.nombre}"></td>
             <td>
-                <a th:href="@{/estados/details/{id} (id=${item.id}) }" class="btn btn-outline-secondary">Detalles</a>
-                <a th:href="@{/estados/edit/{id} (id=${item.id}) }" class="btn btn-outline-info">Editar</a>
-                <a th:href="@{/estados/remove/{id} (id=${item.id}) }" class="btn btn-outline-danger">Eliminar</a>
+                <a th:href="@{/estados/details/{id} (id=${item.id}) }" class="btn btn-outline-success" title="Detalles">
+                    <i class="fas fa-info-circle"></i>
+                </a>
+                <a th:href="@{/estados/edit/{id} (id=${item.id}) }" class="btn btn-outline-warning" title="Editar">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a th:href="@{/estados/remove/{id} (id=${item.id}) }" class="btn btn-outline-danger" title="Eliminar">
+                    <i class="fas fa-trash"></i>
+                </a>
             </td>
         </tr>
         </tbody>

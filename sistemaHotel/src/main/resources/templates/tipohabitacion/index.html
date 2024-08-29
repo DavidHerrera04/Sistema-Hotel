@@ -29,10 +29,11 @@
     <a th:href="@{/tiposhabitacion/create}" class="btn btn-outline-primary">Nueva habitación</a>
     <br>
     <br>
+    <div class="table-responsive">
     <table class="table table-striped table-bordered table-responsive">
         <thead>
         <tr>
-            <th>Id</th>
+            <th>ID</th>
             <th>Nombre</th>
             <th>Descripción</th>
             <th>Acciones</th>
@@ -46,13 +47,20 @@
             <td th:text="${item.descripcion}"></td>
 
             <td>
-                <a th:href="@{/tiposhabitacion/details/{id} (id=${item.id}) }" class="btn btn-outline-secondary">Detalles</a>
-                <a th:href="@{/tiposhabitacion/edit/{id} (id=${item.id}) }" class="btn btn-outline-info">Editar</a>
-                <a th:href="@{/tiposhabitacion/remove/{id} (id=${item.id}) }" class="btn btn-outline-danger">Eliminar</a>
+                <a th:href="@{/tiposhabitacion/details/{id} (id=${item.id}) }" class="btn btn-outline-success" title="Detalles">
+                    <i class="fas fa-info-circle"></i>
+                </a>
+                <a th:href="@{/tiposhabitacion/edit/{id} (id=${item.id}) }" class="btn btn-outline-warning" title="Editar">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a th:href="@{/tiposhabitacion/remove/{id} (id=${item.id}) }" class="btn btn-outline-danger" title="Eliminar">
+                    <i class="fas fa-trash"></i>
+                </a>
             </td>
         </tr>
         </tbody>
     </table>
+        </div>
     <nav aria-label="Page navigation example">
         <ul class="pagination">
             <li class="page-item" th:each="pagenumber : ${pageNumbers}">

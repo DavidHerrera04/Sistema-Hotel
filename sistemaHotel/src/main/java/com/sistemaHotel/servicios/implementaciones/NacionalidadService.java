@@ -18,7 +18,7 @@ public class NacionalidadService implements INacionalidadService {
 
     @Override
     public Page<Nacionalidad> buscarTodosPaginados(Pageable pPageable) {
-        return nacionalidadRepository.findAll(pPageable);
+        return nacionalidadRepository.findByOrderByIdDesc(pPageable);
     }
 
     @Override

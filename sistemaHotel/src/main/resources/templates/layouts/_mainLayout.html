@@ -12,7 +12,7 @@
     <link th:href="@{/css/styles.css}" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link href="img/img1.ico" rel="icon">
+    <link href="img/iconoSistema.png" rel="icon">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -29,7 +29,8 @@
 <body>
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-success">
     <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" href="#">SISTEMA HOTEL</a>
+    <img src="img/iconoSistema.png" alt="Logo Sistema Hotel" style="width: 5rem;"/>
+    <a class="navbar-brand ps-3" th:href="@{/}" style="font-size: 1.1rem">SISTEMA HOTEL</a>
     <!-- Sidebar Toggle-->
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
     <!-- Navbar Search-->

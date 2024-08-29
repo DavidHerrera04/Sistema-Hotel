@@ -18,7 +18,7 @@ public class EmpleadoService implements IEmpleadoService {
 
     @Override
     public Page<Empleado> buscarTodosPaginados(Pageable pPageable) {
-        return empleadoRepository.findAll(pPageable);
+        return empleadoRepository.findByOrderByIdDesc(pPageable);
     }
 
     @Override
