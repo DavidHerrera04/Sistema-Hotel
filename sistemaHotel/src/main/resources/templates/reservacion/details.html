@@ -14,10 +14,10 @@
             <dd class="col-sm-10" th:text="${reservacion.estado.nombre}"></dd>
 
             <dt class="col-sm-2">Empleado</dt>
-            <dd class="col-sm-10" th:text="${reservacion.empleado.nombre}"></dd>
+            <dd class="col-sm-10" th:text="|${reservacion.empleado.nombre} ${reservacion.empleado.apellido}|"></dd>
 
             <dt class="col-sm-2">Cliente</dt>
-            <dd class="col-sm-10" th:text="${reservacion.cliente.nombre}"></dd>
+            <dd class="col-sm-10" th:text="|${reservacion.cliente.nombre} ${reservacion.cliente.apellido}|"></dd>
 
             <dt class="col-sm-2">Habitación</dt>
             <dd class="col-sm-10" th:text="${reservacion.habitacion.numero}"></dd>

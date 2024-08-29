@@ -22,7 +22,7 @@
                     <label for="empleado">Empleado</label>
                     <select id="empleado" name="empleadoId" class="form-control" required>
                         <option value="" disabled selected>Seleccione un empleado</option>
-                        <option th:each="empleado : ${empleados}" th:value="${empleado.id}" th:text="${empleado.nombre}"></option>
+                        <option th:each="empleado : ${empleados}" th:value="${empleado.id}" th:text="|${empleado.nombre} ${empleado.apellido}|"></option>
                     </select>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     <label for="cliente">Cliente</label>
                     <select id="cliente" name="clienteId" class="form-control" required>
                         <option value="" disabled selected>Seleccione un cliente</option>
-                        <option th:each="cliente : ${clientes}" th:value="${cliente.id}" th:text="${cliente.nombre}"></option>
+                        <option th:each="cliente : ${clientes}" th:value="${cliente.id}" th:text="|${cliente.nombre} ${cliente.apellido}|"></option>
                     </select>
                 </div>
             </div>
