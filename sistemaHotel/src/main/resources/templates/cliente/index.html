@@ -26,7 +26,7 @@
     </div>
 
     <h1>Listado de Clientes</h1>
-    <a th:href="@{/clientes/create}" class="btn btn-outline-primary">Nuevo cliente</a>
+    <a th:href="@{/clientes/create}" class="btn btn-outline-primary"> <i class="fas fa-plus"></i> Nuevo cliente</a>
     <br>
     <br>
     <div class="table-responsive">
@@ -54,7 +54,7 @@
             <td th:text="${item.nacionalidad.nombre}"></td>
             <td>
                 <a th:href="@{/clientes/details/{id} (id=${item.id}) }" class="btn btn-outline-success" title="Detalles">
-                    <i class="fas fa-info-circle"></i>
+                    <i class="fas fa-info-details"></i>
                 </a>
                 <a th:href="@{/clientes/edit/{id} (id=${item.id}) }" class="btn btn-outline-warning" title="Editar">
                     <i class="fas fa-edit"></i>

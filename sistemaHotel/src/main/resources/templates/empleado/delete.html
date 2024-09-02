@@ -33,11 +33,13 @@
             <dt class="col-sm-2">Login</dt>
             <dd class="col-sm-10" th:text="${empleado.login}"></dd>
         </dl>
+        <div class="btn-container">
         <form th:action="@{/empleados/delete}" method="post">
             <input type="hidden" name="Id" th:value="${empleado.id}">
             <input type="submit" value="Eliminar" class="btn btn-danger"> |
-            <a th:href="@{/empleados}" type="submit" class="btn btn-secondary">Regresar</a>
+            <a th:href="@{/empleados}" type="submit" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Regresar</a>
         </form>
+        </div>
     </div>
 
 </div>

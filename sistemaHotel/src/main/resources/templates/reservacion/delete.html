@@ -38,11 +38,12 @@
             <dd class="col-sm-10" th:text="${reservacion.observacion}"></dd>
 
         </dl>
-
+        <div class="btn-container">
         <form th:action="@{/reservaciones/delete}" method="post">
             <input type="hidden" name="Id" th:value="${reservacion.id}">
             <input type="submit" name="Id" value="Eliminar" class="btn btn-danger">
-            <a th:href="@{/reservaciones}" type="submit" class="btn btn-secondary">Regresar</a>
+            <a th:href="@{/reservaciones}" type="submit" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Regresar</a>
         </form>
+        </div>
     </div>
 </div>

@@ -18,11 +18,13 @@
             <dt class="col-sm-2">Nacionalidad</dt>
             <dd class="col-sm-10" th:text="${nacionalidad.nombre}"></dd>
         </dl>
+        <div class="btn-container">
         <form th:action="@{/nacionalidades/delete}" method="post">
             <input type="hidden" name="Id" th:value="${nacionalidad.id}">
             <input type="submit" value="Eliminar" class="btn btn-danger"> |
-            <a th:href="@{/nacionalidades}" type="submit" class="btn btn-secondary">Regresar</a>
+            <a th:href="@{/nacionalidades}" type="submit" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Regresar</a>
         </form>
+        </div>
     </div>
 
 </div>

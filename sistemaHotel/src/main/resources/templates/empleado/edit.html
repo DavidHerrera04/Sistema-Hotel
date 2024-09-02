@@ -7,17 +7,14 @@
     <form th:action="@{/empleados/save}" th:object="${empleado}" method="post">
         <input type="hidden" th:field="*{id}">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control"  id="nombre" th:field="*{nombre}" placeholder="Escriba el nombre del empleado"
                            required pattern="[A-Za-z\s]+" title="El nombre solo puede contener letras">
                 </div>
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="apellido">Apellido</label>
                     <input type="text" class="form-control"  id="apellido" th:field="*{apellido}" placeholder="Escriba el apellido del empleado"
@@ -28,16 +25,14 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="direccion">Dirección</label>
                     <input type="text" class="form-control"  id="direccion" th:field="*{direccion}" placeholder="Escriba la direccion del empleado"
                     required pattern=".{5,}" title="La dirección debe tener al menos 5 caracteres">
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="dui">Documento</label>
                     <input type="text" class="form-control"  id="dui" th:field="*{dui}" placeholder="Escriba el dui del empleado"
@@ -48,16 +43,14 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="telefono">Teléfono</label>
                     <input type="text" class="form-control"  id="telefono" th:field="*{telefono}" placeholder="Escriba el teléfono del empleado"
                            required pattern="\d{4}-\d{4}" title="El número de teléfono debe tener el formato 0000-000, son exactamente 8 dígitos divididos por un guion">
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="estado">Estado</label>
                     <select id="estado" class="form-control" th:field="*{estado}" required>
@@ -68,16 +61,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="login">Login</label>
                     <input type="text" class="form-control" th:field="*{login}" id="login" placeholder="Escriba el usuario del empleado"
                            required pattern="[A-Za-z0-9\s.,;:!?]+" title="La descripción puede contener letras, números, espacios y signos">
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="clave">Clave</label>
                     <input type="text" class="form-control" th:field="*{clave}" id="clave" placeholder="Escriba la contraseña del usuario"
@@ -86,8 +77,9 @@
             </div>
         </div>
         <hr>
-        <button type="submit" class="btn btn-primary">Modificar</button>
-        <a th:href="@{/empleados}" type="submit" class="btn btn-secondary">Regresar</a>
-
+        <div class="btn-container">
+        <button type="submit" class="btn btn-warning"> <i class="fas fa-edit"></i> Modificar</button>
+        <a th:href="@{/empleados}" type="submit" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Regresar</a>
+        </div>
     </form>
 </div>

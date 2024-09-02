@@ -8,7 +8,7 @@
     <form th:action="@{/reservaciones/update}" method="post">
         <input type="hidden" name="id" th:value="${reservacion.id}">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="estado">Estado:</label>
                     <select  id="estado" name="estadoId" class="form-control" required>
@@ -20,9 +20,7 @@
                     </select>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="empleado">Empleado:</label>
                     <select  id="empleado" name="empleadoId" class="form-control" required>
@@ -36,7 +34,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="cliente">Cliente:</label>
                     <select  id="cliente" name="clienteId" class="form-control" required>
@@ -48,9 +46,7 @@
                     </select>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="habitacion">Habitación:</label>
                     <select  id="habitacion" name="habitacionId" class="form-control" required>
@@ -64,15 +60,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="fechaHoraEntrada">fechaHoraEntrada:</label>
                     <input type="text" class="form-control"  id="fechaHoraEntrada" name="fechaHoraEntrada" th:value="${reservacion.fechaHoraEntrada}" required>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="fechaHoraSalida">fechaHoraSalida:</label>
                     <input type="text" class="form-control"  id="fechaHoraSalida" name="fechaHoraSalida" th:value="${reservacion.fechaHoraSalida}" required>
@@ -80,16 +74,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="costoTotal">Costo total:</label>
                     <input type="number" class="form-control" id="costoTotal" name="costoTotal" th:value="${reservacion.costoTotal}"  placeholder="Escriba el costo Total de la habitacion"
                            required pattern="^\d+(,\d{1,2})?$" title="Ingrese un número válido con hasta dos decimales (ej. 100 o 100,50)">
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="observacion">Observación:</label>
                     <input type="text" class="form-control" id="observacion" name="observacion"  th:value="${reservacion.observacion}"  placeholder="Escriba la observacion"
@@ -98,13 +90,9 @@
             </div>
         </div>
         <hr>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                    <a href="/reservaciones" type="submit" class="btn btn-secondary">Regresar</a>
-                </div>
-            </div>
+        <div class="btn-container">
+                    <button type="submit" class="btn btn-warning"><i class="fas fa-edit"></i> Modificar</button>
+                    <a href="/reservaciones" type="submit" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Regresar</a>
         </div>
     </form>
 </div>

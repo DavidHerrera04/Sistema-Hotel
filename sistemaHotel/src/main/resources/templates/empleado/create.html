@@ -6,16 +6,14 @@
     <h1>Crear nuevo empleado</h1>
     <form th:action="@{/empleados/save}" th:object="${empleado}" method="post">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba el nombre del empleado"
                            required pattern="[A-Za-z\s]+" title="El nombre solo puede contener letras">
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="apellido">Apellido</label>
                     <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Escriba el apellido del empleado"
@@ -23,17 +21,16 @@
                 </div>
             </div>
         </div>
+
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="direccion">Dirección</label>
                     <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Escriba la dirección del empleado"
                            required pattern=".{5,}" title="La dirección debe tener al menos 5 caracteres">
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="dui">Dui</label>
                     <input type="text" class="form-control" id="dui" name="dui" placeholder="00000000-0"
@@ -42,16 +39,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="telefono">Telefono</label>
                     <input type="text" class="form-control" id="telefono" name="telefono" placeholder="0000-0000"
                            required pattern="\d{4}-\d{4}" title="El número de teléfono debe tener el formato 0000-000, son exactamente 8 dígitos divididos por un guion">
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="estado">Estado</label>
                     <select id="estado" name="estado" class="form-control" required>
@@ -62,16 +57,14 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="login">Login</label>
                     <input type="text" class="form-control" th:field="*{login}" id="login" placeholder="Escriba el usuario del empleado"
                            required pattern="[A-Za-z0-9\s.,;:!?´]+" title="La descripción puede contener letras, números, espacios y signos">
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="form-group">
                     <label for="clave">Clave</label>
                     <input type="password" class="form-control" th:field="*{clave}" id="clave" placeholder="Escriba la contraseña del usuario"
@@ -81,7 +74,11 @@
         </div>
 
         <hr>
-        <button type="submit" class="btn btn-primary">Guardar</button>
-        <a th:href="@{/empleados}" type="submit" class="btn btn-secondary" >Regresar</a>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Guardar
+            </button>
+            <a th:href="@{/empleados}" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Regresar
+            </a>
     </form>
 </div>

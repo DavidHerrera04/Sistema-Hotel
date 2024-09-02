@@ -35,8 +35,9 @@
             <dd class="col-sm-10" th:text="${reservacion.observacion}"></dd>
 
         </dl>
-
-        <a th:href="@{/reservaciones/edit/{id} (id = ${reservacion.id}) }" class="btn btn-primary">Editar</a>
-        <a th:href="@{/reservaciones}" type="submit" class="btn btn-secondary">Regresar</a>
+        <div class="btn-container">
+        <a th:href="@{/reservaciones/edit/{id} (id = ${reservacion.id}) }" class="btn btn-warning"><i class="fas fa-edit"></i> Editar</a>
+        <a th:href="@{/reservaciones}" type="submit" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Regresar</a>
+        </div>
     </div>
 </div>

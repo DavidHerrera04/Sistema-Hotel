@@ -2,78 +2,146 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="/layouts/_mainLayout"
       xmlns:sec="http://www.w3.org/1999/xhtml">
-
+<!-- Customized Bootstrap Stylesheet -->
 <div layout:fragment="content">
-
+    <style>
+        .text-primary {
+            --bs-text-opacity: 1;
+            color: #7AB730 !important;
+        }
+        a {
+            color: black;
+        }
+        a:hover {
+            color: #7AB730 !important;
+        }
+    </style>
     <div sec:authorize="isAnonymous()" class="alert alert-danger text-center" role="alert">
         Debes iniciar sesión para poder utilizar la aplicación.
     </div>
-    <body>
-    <!-- Service Start -->
-    <div class="container-fluid pt-5">
-        <div class="container">
-            <div class="section-title">
-                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Nuestras Habitaciones</h4>
-                <h2 class="display-4">Seguridad, Atención y Comodidad </h2>
+    <!-- Habitaciones Start -->
+    <div class="container-fluid py-5" id="Habitaciones">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h5 class="text-primary text-uppercase" style="letter-spacing: 5px;">Habitaciones</h5>
             </div>
-            <br>
             <div class="row">
-                <div class="col-lg-6 mb-5">
-                    <div class="row align-items-center">
-                        <div class="col-sm-5">
-                            <img class="img-fluid mb-3 mb-sm-0" src="img/img2.jpg" alt="">
-                        </div>
-                        <div class="col-sm-7">
-                            <h4><i class="fa fa-bed service-icon"></i> Habitación Premium</h4>
-                            <p class="m-0">Ofrece un espacio mas lujoso y cómodo, diseñado para brindar una experiencia
-                            superior a los huéspedes, e incluye una cama tamaño Queen con sábanas de alta calidad,
-                                decoración elegante y moderna.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-5">
-                    <div class="row align-items-center">
-                        <div class="col-sm-5">
-                            <img class="img-fluid mb-3 mb-sm-0" src="img/img5.jpg" alt="">
-                        </div>
-                        <div class="col-sm-7">
-                            <h4><i class="fa fa-bed service-icon"></i> Habitación Clasica</h4>
-                            <p class="m-0">Espacio diseñado para alojar cómodamente a una sola persona,
-                                cuenta con una cama individual, incluye comodidades esenciales como una mesita de noche,
-                                un escritorio y un closet.</p>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+                        <img class="img-fluid" src="img/imghabitacion1.jpg" alt="">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-bed text-primary mr-2"></i>Habitación Premium</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Personas</small>
+                            </div>
+                            <a class="h5 text-decoration-none" href="">Ofrece un espacio mas lujoso y cómodo, diseñado para brindar una experiencia
+                                superior a los huéspedes.</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">$200</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-5">
-                    <div class="row align-items-center">
-                        <div class="col-sm-5">
-                            <img class="img-fluid mb-3 mb-sm-0" src="img/img7.jpg" alt="">
-                        </div>
-                        <div class="col-sm-7">
-                            <h4><i class="fa fa-bed service-icon"></i> Habitación Doble</h4>
-                            <p class="m-0">Habitación para dos personas, dos camas de tamaño normal,
-                                es espaciosa mayor que el de una habitación individual.</p>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+                        <img class="img-fluid" src="img/imghabitacion2.jpg" alt="">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-bed text-primary mr-2"></i>Habitación Clasica</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>1 Persona</small>
+                            </div>
+                            <a class="h5 text-decoration-none" href="">Espacio diseñado para alojar cómodamente a una sola persona,
+                                cuenta con una cama individual.</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">$85</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-5">
-                    <div class="row align-items-center">
-                        <div class="col-sm-5">
-                            <img class="img-fluid mb-3 mb-sm-0" src="img/img8.jpg" alt="">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+                        <img class="img-fluid" src="img/imghabitacion3.jpg" alt="">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-bed text-primary mr-2"></i>Habitación Doble</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Personas</small>
+                            </div>
+                            <a class="h5 text-decoration-none" href="">Habitación para dos personas, dos camas de tamaño normal,
+                                es espaciosa y se agrega una mesita.</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">$125</h5>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm-7">
-                            <h4><i class="fa fa-bed service-icon"></i> Habitación Suit</h4>
-                            <p class="m-0"> Esta es una habitación con un espacio más amplio
-                                con zonas de dormitorio separadas conectadas a una sala de estar,
-                                incluye una cocina equipada con alacena.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+                        <img class="img-fluid" src="img/imghabitacion4.jpg" alt="">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-bed text-primary mr-2"></i>Habitación Suit</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Personas</small>
+                            </div>
+                            <a class="h5 text-decoration-none" href="">Habitación con espacios amplios
+                                con zonas de dormitorios conectadas.</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">$300</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+                        <img class="img-fluid" src="img/imghabitacion5.jpg" alt="">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-bed text-primary mr-2"></i>Habitación estándar</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Personas</small>
+                            </div>
+                            <a class="h5 text-decoration-none" href="">Una habitación básica con las comodidades esenciales, como cama, baño y televisión.</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">$150</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+                        <img class="img-fluid" src="img/imghabitacion6.jpg" alt="">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-bed text-primary mr-2"></i>Habitación Villa</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Personas</small>
+                            </div>
+                            <a class="h5 text-decoration-none" href="">Habitación independiente con varios dormitorios, cuartos de baño y zonas de estar.</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">$350</h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Service End -->
-    </body>
+    <!-- Habitaciones End -->
 </div>
 </html>
 

@@ -26,7 +26,7 @@
     </div>
 
     <h1>Listado de reservaciones</h1>
-    <a th:href="@{/reservaciones/create}" class="btn btn-outline-primary">Nueva reservación</a>
+    <a th:href="@{/reservaciones/create}" class="btn btn-outline-primary"> <i class="fas fa-plus"></i> Nueva reservación</a>
     <br>
     <br>
     <div class="table-responsive">
@@ -59,7 +59,7 @@
 
                 <td>
                     <a th:href="@{/reservaciones/details/{id} (id=${item.id}) }" class="btn btn-outline-success" title="Detalles">
-                        <i class="fas fa-info-circle"></i>
+                        <i class="fas fa-info-details"></i>
                     </a>
                     <a th:href="@{/reservaciones/edit/{id} (id=${item.id}) }" class="btn btn-outline-warning" title="Editar">
                         <i class="fas fa-edit"></i>

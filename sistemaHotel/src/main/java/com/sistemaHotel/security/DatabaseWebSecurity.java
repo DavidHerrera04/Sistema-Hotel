@@ -32,7 +32,7 @@ public class DatabaseWebSecurity {
                         // aperturar el acceso a los recursos estáticos
                         .requestMatchers("/assets/**", "/css/**", "/js/**", "/lib/**", "/mail/**").permitAll()
                         // las vistas públicas no requieren autenticación
-                        .requestMatchers("/", "/privacy", "/terms", "/img/**").permitAll()
+                        .requestMatchers("/", "/Sistema", "/privacy", "/terms", "/img/**").permitAll()
 
                         // Asignar permisos a URLs por ROLES
                         .requestMatchers("/estado/**").hasAnyAuthority("admin")
@@ -41,12 +41,12 @@ public class DatabaseWebSecurity {
                         .anyRequest().authenticated())
                 .formLogin(form -> form
                         .loginPage("/login")
-                        .defaultSuccessUrl("/", true) // Redirige a la página de inicio al éxito
+                        .defaultSuccessUrl("/Sistema", true) // Redirige a la página de inicio al éxito
                         .failureUrl("/login?error=true") // Redirige a la página de inicio de sesión con mensaje de error en caso de fallo
                         .permitAll())
                 .logout(logout -> logout
                         .logoutUrl("/logout")
-                        .logoutSuccessUrl("/")
+                        .logoutSuccessUrl("/Sistema")
                         .permitAll());
 
         // todas las demás vistas requieren autenticación

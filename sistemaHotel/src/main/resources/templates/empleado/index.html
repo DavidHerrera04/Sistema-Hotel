@@ -26,7 +26,7 @@
     </div>
 
     <h1>Listado de Empleados</h1>
-    <a th:href="@{/empleados/create}" class="btn btn-outline-primary">Nuevo empleado</a>
+    <a th:href="@{/empleados/create}" class="btn btn-outline-primary"> <i class="fas fa-plus"></i> Nuevo empleado</a>
     <br>
     <br>
     <div class="table-responsive">
@@ -56,7 +56,7 @@
             <td th:text="${item.login}"></td>
             <td>
                 <a th:href="@{/empleados/details/{id} (id=${item.id}) }" class="btn btn-outline-success" title="Detalles">
-                    <i class="fas fa-info-circle"></i>
+                    <i class="fas fa-info-details"></i>
                 </a>
                 <a th:href="@{/empleados/edit/{id} (id=${item.id}) }" class="btn btn-outline-warning" title="Editar">
                     <i class="fas fa-edit"></i>

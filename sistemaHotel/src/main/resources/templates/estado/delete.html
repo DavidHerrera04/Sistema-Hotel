@@ -15,11 +15,13 @@
       <dt class="col-sm-2">Nombre</dt>
       <dd class="col-sm-10" th:text="${estado.nombre}"></dd>
     </dl>
+    <div class="btn-container">
     <form th:action="@{/estados/delete}" method="post">
       <input type="hidden" name="Id" th:value="${estado.id}">
       <input type="submit" value="Eliminar" class="btn btn-danger"> |
-      <a th:href="@{/estados}" type="submit" class="btn btn-secondary">Regresar</a>
+      <a th:href="@{/estados}" type="submit" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Regresar</a>
     </form>
+    </div>
   </div>
 
 </div>

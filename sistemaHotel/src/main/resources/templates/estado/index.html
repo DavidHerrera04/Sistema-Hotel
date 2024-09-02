@@ -26,7 +26,7 @@
     </div>
 
     <h1>Listado de Estados</h1>
-    <a th:href="@{/estados/create}" class="btn btn-outline-primary">Nuevo estado</a>
+    <a th:href="@{/estados/create}" class="btn btn-outline-primary"> <i class="fas fa-plus"></i> Nuevo estado</a>
     <br>
     <br>
     <table class="table table-striped table-bordered table-responsive">
@@ -44,7 +44,7 @@
             <td th:text="${item.nombre}"></td>
             <td>
                 <a th:href="@{/estados/details/{id} (id=${item.id}) }" class="btn btn-outline-success" title="Detalles">
-                    <i class="fas fa-info-circle"></i>
+                    <i class="fas fa-info-details"></i>
                 </a>
                 <a th:href="@{/estados/edit/{id} (id=${item.id}) }" class="btn btn-outline-warning" title="Editar">
                     <i class="fas fa-edit"></i>

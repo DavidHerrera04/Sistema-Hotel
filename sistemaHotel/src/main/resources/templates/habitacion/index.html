@@ -27,7 +27,7 @@
     </div>
 
     <h1>Listado de Habitaciones</h1>
-    <a th:href="@{/habitaciones/create}" class="btn btn-outline-primary">Nueva habitación</a>
+    <a th:href="@{/habitaciones/create}" class="btn btn-outline-primary"> <i class="fas fa-plus"></i> Nueva habitación</a>
     <br>
     <br>
     <div class="table-responsive">
@@ -53,7 +53,7 @@
             <td th:text="${item.descripcion}"></td>
             <td>
                 <a th:href="@{/habitaciones/details/{id} (id=${item.id}) }" class="btn btn-outline-success" title="Detalles">
-                    <i class="fas fa-info-circle"></i>
+                    <i class="fas fa-info-details"></i>
                 </a>
                 <a th:href="@{/habitaciones/edit/{id} (id=${item.id}) }" class="btn btn-outline-warning" title="Editar">
                     <i class="fas fa-edit"></i>
