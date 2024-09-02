@@ -9,40 +9,44 @@
         <div class="row">
             <div class="col-md-5">
                 <div class="form-group">
+                    <label for="rol">Rol</label>
+                    <select id="rol" name="rol" class="form-control" required>
+                        <option th:each="rol : ${roles}" th:value="${rol.id}" th:text="${rol.nombre}"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control"  id="nombre" th:field="*{nombre}" placeholder="Escriba el nombre del empleado"
                            required pattern="[A-Za-z\s]+" title="El nombre solo puede contener letras">
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col-md-5">
                 <div class="form-group">
                     <label for="apellido">Apellido</label>
                     <input type="text" class="form-control"  id="apellido" th:field="*{apellido}" placeholder="Escriba el apellido del empleado"
                            required pattern="[A-Za-z\s]+" title="El apellido solo puede contener letras">
-
                 </div>
+            </div>
+        <div class="col-md-5">
+            <div class="form-group">
+                <label for="direccion">Dirección</label>
+                <input type="text" class="form-control"  id="direccion" th:field="*{direccion}" placeholder="Escriba la direccion del empleado"
+                       required pattern=".{5,}" title="La dirección debe tener al menos 5 caracteres">
             </div>
         </div>
-
+        </div>
         <div class="row">
-            <div class="col-md-5">
-                <div class="form-group">
-                    <label for="direccion">Dirección</label>
-                    <input type="text" class="form-control"  id="direccion" th:field="*{direccion}" placeholder="Escriba la direccion del empleado"
-                    required pattern=".{5,}" title="La dirección debe tener al menos 5 caracteres">
-                </div>
-            </div>
             <div class="col-md-5">
                 <div class="form-group">
                     <label for="dui">Documento</label>
                     <input type="text" class="form-control"  id="dui" th:field="*{dui}" placeholder="Escriba el dui del empleado"
                            required pattern="\d{8}-\d{1}" title="El DUI debe tener el formato 00000000-0">
-
                 </div>
             </div>
-        </div>
-
-        <div class="row">
             <div class="col-md-5">
                 <div class="form-group">
                     <label for="telefono">Teléfono</label>
@@ -50,16 +54,8 @@
                            required pattern="\d{4}-\d{4}" title="El número de teléfono debe tener el formato 0000-000, son exactamente 8 dígitos divididos por un guion">
                 </div>
             </div>
-            <div class="col-md-5">
-                <div class="form-group">
-                    <label for="estado">Estado</label>
-                    <select id="estado" class="form-control" th:field="*{estado}" required>
-                        <option th:value="ACTIVO" th:text="'ACTIVO'"></option>
-                        <option th:value="INACTIVO" th:text="'INACTIVO'"></option>
-                    </select>
-                </div>
-            </div>
         </div>
+
         <div class="row">
             <div class="col-md-5">
                 <div class="form-group">
@@ -72,7 +68,7 @@
                 <div class="form-group">
                     <label for="clave">Clave</label>
                     <input type="text" class="form-control" th:field="*{clave}" id="clave" placeholder="Escriba la contraseña del usuario"
-                           required pattern="[A-Za-z0-9\s.,;:!?]+" title="La clave puede contener letras, números y signos">
+                           required>
                 </div>
             </div>
         </div>

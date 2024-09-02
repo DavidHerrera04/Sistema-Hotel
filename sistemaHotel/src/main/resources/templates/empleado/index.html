@@ -52,7 +52,7 @@
             <td th:text="${item.direccion}"></td>
             <td th:text="${item.dui}"></td>
             <td th:text="${item.telefono}"></td>
-            <td th:text="${item.estado}"></td>
+            <td th:text="${item.estado == 1} ? 'INACTIVO' : 'ACTIVO'"></td>
             <td th:text="${item.login}"></td>
             <td>
                 <a th:href="@{/empleados/details/{id} (id=${item.id}) }" class="btn btn-outline-success" title="Detalles">

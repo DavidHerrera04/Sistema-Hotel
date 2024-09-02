@@ -8,11 +8,21 @@
         <div class="row">
             <div class="col-md-5">
                 <div class="form-group">
+                    <label for="rol">Rol</label>
+                    <select id="rol" name="rol" class="form-control" required>
+                        <option th:each="rol : ${roles}" th:value="${rol.id}" th:text="${rol.nombre}"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
                     <label for="nombre">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba el nombre del empleado"
                            required pattern="[A-Za-z\s]+" title="El nombre solo puede contener letras">
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col-md-5">
                 <div class="form-group">
                     <label for="apellido">Apellido</label>
@@ -20,9 +30,6 @@
                            required pattern="[A-Za-z\s]+" title="El apellido solo puede contener letras">
                 </div>
             </div>
-        </div>
-
-        <div class="row">
             <div class="col-md-5">
                 <div class="form-group">
                     <label for="direccion">Dirección</label>
@@ -30,6 +37,9 @@
                            required pattern=".{5,}" title="La dirección debe tener al menos 5 caracteres">
                 </div>
             </div>
+        </div>
+
+        <div class="row">
             <div class="col-md-5">
                 <div class="form-group">
                     <label for="dui">Dui</label>
@@ -37,22 +47,11 @@
                            required pattern="\d{8}-\d{1}" title="El DUI debe tener el formato 00000000-0">
                 </div>
             </div>
-        </div>
-        <div class="row">
             <div class="col-md-5">
                 <div class="form-group">
                     <label for="telefono">Telefono</label>
                     <input type="text" class="form-control" id="telefono" name="telefono" placeholder="0000-0000"
                            required pattern="\d{4}-\d{4}" title="El número de teléfono debe tener el formato 0000-000, son exactamente 8 dígitos divididos por un guion">
-                </div>
-            </div>
-            <div class="col-md-5">
-                <div class="form-group">
-                    <label for="estado">Estado</label>
-                    <select id="estado" name="estado" class="form-control" required>
-                        <option>ACTIVO</option>
-                        <option>TEMPORAL</option>
-                    </select>
                 </div>
             </div>
         </div>
